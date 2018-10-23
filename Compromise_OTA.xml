@@ -1,0 +1,130 @@
+<?xml version='1.0'?>
+<adtree>
+	<node refinement="disjunctive">
+		<label>Compromise
+OTA</label>
+		<node refinement="disjunctive">
+			<label>Exploit
+Vuln&apos;s</label>
+			<node refinement="sequential">
+				<label>Exploit
+Known
+Vuln</label>
+				<node refinement="disjunctive">
+					<label>Retrieve
+from
+vuln
+database</label>
+				</node>
+				<node refinement="disjunctive">
+					<label>Connect
+to OTA</label>
+					<node refinement="sequential" switchRole="yes">
+						<label>Install
+On-Board
+IDS</label>
+						<node refinement="disjunctive">
+							<label>Maintain
+database of
+known
+exploits</label>
+						</node>
+						<node refinement="disjunctive">
+							<label>Assess
+comms
+patterns
+for known
+vuln&apos;s</label>
+						</node>
+					</node>
+				</node>
+			</node>
+			<node refinement="sequential">
+				<label>Exploit
+Zero-Day
+Vuln</label>
+				<node refinement="sequential">
+					<label>Discover
+Zero-Day
+Vuln</label>
+					<node refinement="conjunctive">
+						<label>Lab
+research</label>
+					</node>
+					<node refinement="conjunctive">
+						<label>Source
+vuln
+from
+Dark Web</label>
+					</node>
+				</node>
+				<node refinement="conjunctive">
+					<label>Connect
+to OTA</label>
+					<node refinement="sequential" switchRole="yes">
+						<label>Install
+On-Board
+IDS</label>
+						<node refinement="conjunctive">
+							<label>Assess comms
+for baseline
+OTA
+behaviour</label>
+						</node>
+						<node refinement="conjunctive">
+							<label>Detect comms
+patterns
+deviating
+from
+baseline</label>
+						</node>
+					</node>
+				</node>
+			</node>
+		</node>
+		<node refinement="sequential">
+			<label>Exploit
+Backdoor</label>
+			<node refinement="sequential">
+				<label>Install
+Backdoor</label>
+				<node refinement="conjunctive">
+					<label>Write
+Backdoor</label>
+				</node>
+				<node refinement="conjunctive">
+					<label>Embed
+in code</label>
+				</node>
+			</node>
+			<node refinement="conjunctive">
+				<label>Connect
+to OTA</label>
+				<node refinement="sequential" switchRole="yes">
+					<label>Install
+On-Board
+IDS</label>
+					<node refinement="conjunctive">
+						<label>Assess comms
+for baseline
+OTA
+behaviour</label>
+					</node>
+					<node refinement="conjunctive">
+						<label>Detect comms
+patterns
+deviating
+from
+baseline</label>
+						<node refinement="conjunctive" switchRole="yes">
+							<label>Evade
+detection
+as false
+negative</label>
+						</node>
+					</node>
+				</node>
+			</node>
+		</node>
+	</node>
+</adtree>
